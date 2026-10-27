@@ -1,0 +1,57 @@
+{
+  "summary": {
+    "robot": "broken_case",
+    "links": 4,
+    "joints": 4,
+    "dof": 3,
+    "fixed_joints": 1,
+    "total_mass_kg": 3.0,
+    "chain_len": 2,
+    "chain": [
+      "j1",
+      "j2"
+    ],
+    "chain_reach_m": 0.3,
+    "roots": [
+      "base_link"
+    ],
+    "anomalies": 7
+  },
+  "anomalies": [
+    {
+      "code": "A1",
+      "level": "high",
+      "msg": "关节 j3 的 parent「ghost_link」不存在"
+    },
+    {
+      "code": "A2",
+      "level": "mid",
+      "msg": "连续关节 j2 带了限位（应只给 effort/velocity）"
+    },
+    {
+      "code": "A3",
+      "level": "high",
+      "msg": "关节 j3（revolute）缺限位"
+    },
+    {
+      "code": "A4",
+      "level": "mid",
+      "msg": "连杆 link_a 声明了惯性但质量 <= 0"
+    },
+    {
+      "code": "A5",
+      "level": "mid",
+      "msg": "连杆 link_a 惯量全 0"
+    },
+    {
+      "code": "A6",
+      "level": "mid",
+      "msg": "关节 j2 轴向量模长 2.0000 ≠ 1"
+    },
+    {
+      "code": "A8",
+      "level": "high",
+      "msg": "连杆 link_c 被多个关节挂载（j3 / j4）"
+    }
+  ]
+}

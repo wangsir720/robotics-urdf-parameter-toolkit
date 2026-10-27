@@ -1,0 +1,3 @@
+# 本工具只用 Python 标准库（xml.etree / csv / json / math），
+# 不依赖任何第三方包，因此无需 pip install。
+# Python >= 3.8

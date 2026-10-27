@@ -1,0 +1,8 @@
+﻿joint,type,parent,child,axis_x,axis_y,axis_z,axis_norm,ox,oy,oz,length_m,roll,pitch,yaw,lower,upper,range,effort,velocity,mimic,dof
+shoulder_pan_joint,revolute,base_link,shoulder_link,0.0000,0.0000,1.0000,1.0000,0.0000,0.0000,0.0892,0.0892,0.0000,0.0000,0.0000,-6.2832,6.2832,12.5664,150,3.15,,1
+shoulder_lift_joint,revolute,shoulder_link,upper_arm_link,0.0000,1.0000,0.0000,1.0000,0.0000,0.1358,0.0000,0.1358,0.0000,1.5708,0.0000,-6.2832,6.2832,12.5664,150,3.15,,1
+elbow_joint,revolute,upper_arm_link,forearm_link,0.0000,1.0000,0.0000,1.0000,0.0000,-0.1197,0.4250,0.4415,0.0000,0.0000,0.0000,-3.1416,3.1416,6.2832,150,3.15,,1
+wrist_1_joint,revolute,forearm_link,wrist_1_link,0.0000,1.0000,0.0000,1.0000,0.0000,0.0000,0.3922,0.3922,0.0000,1.5708,0.0000,-6.2832,6.2832,12.5664,28,3.2,,1
+wrist_2_joint,revolute,wrist_1_link,wrist_2_link,0.0000,0.0000,1.0000,1.0000,0.0000,0.0930,0.0000,0.0930,0.0000,0.0000,0.0000,-6.2832,6.2832,12.5664,28,3.2,,1
+wrist_3_joint,revolute,wrist_2_link,wrist_3_link,0.0000,1.0000,0.0000,1.0000,0.0000,0.0000,0.0946,0.0946,0.0000,0.0000,0.0000,-6.2832,6.2832,12.5664,28,3.2,,1
+ee_fixed_joint,fixed,wrist_3_link,ee_link,1.0000,0.0000,0.0000,1.0000,0.0000,0.0823,0.0000,0.0823,0.0000,0.0000,1.5708,,,,,,,0

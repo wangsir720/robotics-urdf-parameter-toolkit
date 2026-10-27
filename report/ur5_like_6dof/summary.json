@@ -1,0 +1,26 @@
+{
+  "summary": {
+    "robot": "ur5_like_6dof",
+    "links": 8,
+    "joints": 7,
+    "dof": 6,
+    "fixed_joints": 1,
+    "total_mass_kg": 20.9939,
+    "chain_len": 7,
+    "chain": [
+      "shoulder_pan_joint",
+      "shoulder_lift_joint",
+      "elbow_joint",
+      "wrist_1_joint",
+      "wrist_2_joint",
+      "wrist_3_joint",
+      "ee_fixed_joint"
+    ],
+    "chain_reach_m": 1.3287,
+    "roots": [
+      "base_link"
+    ],
+    "anomalies": 0
+  },
+  "anomalies": []
+}

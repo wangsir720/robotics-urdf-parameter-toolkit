@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "robot": "agv_diff_drive",
+    "links": 5,
+    "joints": 4,
+    "dof": 2,
+    "fixed_joints": 2,
+    "total_mass_kg": 48.0,
+    "chain_len": 1,
+    "chain": [
+      "wheel_left_joint"
+    ],
+    "chain_reach_m": 0.3228,
+    "roots": [
+      "base_footprint"
+    ],
+    "anomalies": 0
+  },
+  "anomalies": []
+}

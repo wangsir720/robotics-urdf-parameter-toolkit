@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!-- 4 轴 SCARA（水平多关节 + Z 向直线 + 末端回转），典型 3C 装配/分拣构型 -->
+<robot name="scara_4axis">
+  <link name="base_link">
+    <inertial><mass value="12.5"/>
+      <inertia ixx="0.085" iyy="0.085" izz="0.152" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><geometry><box size="0.24 0.24 0.22"/></geometry></visual>
+  </link>
+  <link name="link_1">
+    <inertial><mass value="3.2"/>
+      <inertia ixx="0.021" iyy="0.021" izz="0.004" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><geometry><cylinder radius="0.045" length="0.35"/></geometry></visual>
+  </link>
+  <link name="link_2">
+    <inertial><mass value="1.8"/>
+      <inertia ixx="0.012" iyy="0.012" izz="0.002" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><geometry><cylinder radius="0.035" length="0.25"/></geometry></visual>
+  </link>
+  <link name="z_axis">
+    <inertial><mass value="1.1"/>
+      <inertia ixx="0.003" iyy="0.003" izz="0.001" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><geometry><cylinder radius="0.02" length="0.20"/></geometry></visual>
+  </link>
+  <link name="tool0">
+    <inertial><mass value="0.35"/>
+      <inertia ixx="0.0002" iyy="0.0002" izz="0.0002" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><geometry><sphere radius="0.015"/></geometry></visual>
+  </link>
+
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link"/><child link="link_1"/>
+    <origin xyz="0 0 0.22" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.967" upper="2.967" effort="120" velocity="6.28"/>
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1"/><child link="link_2"/>
+    <origin xyz="0.35 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.443" upper="2.443" effort="60" velocity="6.28"/>
+  </joint>
+  <joint name="joint_3" type="prismatic">
+    <parent link="link_2"/><child link="z_axis"/>
+    <origin xyz="0.25 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0.0" upper="0.20" effort="200" velocity="1.2"/>
+  </joint>
+  <joint name="joint_4" type="revolute">
+    <parent link="z_axis"/><child link="tool0"/>
+    <origin xyz="0 0 -0.20" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.2832" upper="6.2832" effort="10" velocity="12.0"/>
+  </joint>
+</robot>
